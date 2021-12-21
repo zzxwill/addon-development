@@ -1,8 +1,7 @@
 // install Prometheus
 output: {
 	type: "helm"
-	dependsOn:
-		- "grafana-registration"
+	dependsOn: ["grafana-registration"]
 	properties: {
 		chart:    "prometheus"
 		version:  "14.4.1"
