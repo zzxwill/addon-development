@@ -1,0 +1,18 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: observability
+  namespace: vela-system
+spec:
+  components:
+    - name: grafana-registration
+      type: helm
+      properties:
+        repoType: git
+        url: https://github.com/oam-dev/grafana-registration
+        git:
+          branch: master
+        chart: ./chart
+        targetNamespace: vela-system
+        values:
+          replicaCount: 1
