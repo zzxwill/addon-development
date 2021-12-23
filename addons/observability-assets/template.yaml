@@ -8,11 +8,8 @@ spec:
     - name: grafana-registration
       type: helm
       properties:
-        repoType: git
-        url: https://github.com/oam-dev/grafana-registration
-        git:
-          branch: master
-        chart: ./chart
-        targetNamespace: vela-system
-        values:
-          replicaCount: 1
+        chart: grafana-registration
+        version: 0.0.7
+        repoType: helm
+        url: https://charts.kubevela.net/addons
+        releaseName: grafana-registration
