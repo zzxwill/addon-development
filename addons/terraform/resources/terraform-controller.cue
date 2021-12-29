@@ -6,13 +6,18 @@ output: {
 		chart:    "terraform-controller"
 		version:  "0.2.20"
 		values: {
-			if parameter["github-blocked"] == false {
-				githubBlocked: "false"
-			}
-			if parameter["github-blocked"] == true {
-				githubBlocked: "true"
+			githubBlocked?: *"'false'" | string
+			//   if !parameter["github-blocked"] {
+			//    githubBlocked: "'false'"
+			//   }
+			if parameter["github-blocked"] {
+				githubBlocked: "'true'"
 			}
 		}
 	}
 }
 
+parameter: {
+	// +usage=Whether GitHub is blocked
+	"github-blocked": *false | bool
+}
