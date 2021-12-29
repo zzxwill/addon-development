@@ -12,7 +12,7 @@ output: {
 			if parameter["github-blocked"] != false {
 				githubBlocked: "'true'"
 			}
-			image: tag: latest
+			image: tag: "latest"
 		}
 	}
 }
