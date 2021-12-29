@@ -7,10 +7,10 @@ output: {
 		version:  "0.2.20"
 		values: {
 			if parameter["github-blocked"] == false {
-				githubBlocked: "'false'"
+				githubBlocked: "false"
 			}
-			if parameter["github-blocked"] != false {
-				githubBlocked: "'true'"
+			if parameter["github-blocked"] == true {
+				githubBlocked: "true"
 			}
 		}
 	}
