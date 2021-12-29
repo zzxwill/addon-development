@@ -6,7 +6,12 @@ output: {
 		chart:    "terraform-controller"
 		version:  "0.2.20"
 		values: {
+			if !parameter["githubBlocked"] {
+				githubBlocked: "'false'"
+			}
+			if parameter["githubBlocked"] {
 				githubBlocked: "'true'"
+			}
 		}
 	}
 }
